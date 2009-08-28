@@ -1,0 +1,67 @@
+<div id="main">
+	<table>
+		<tbody>
+			<tr>
+				<td class="h">
+					<h3>stable</h3>
+				</td>
+				<td>
+					<p>
+						Smisk <?= smisk::$stable_version ?> is the current stable version:<br/>
+						↓ <a href="/dist/smisk-<?= smisk::$stable_version ?>.tar.gz">smisk-<?= smisk::$stable_version ?>.tar.gz</a>
+						 (<a href="/dist/smisk-<?= smisk::$stable_version ?>.tar.gz.md5">MD5</a>,
+							<a href="/dist/smisk-<?= smisk::$stable_version ?>.tar.gz.sha1">SHA-1</a>,
+							<a href="/dist/smisk-<?= smisk::$stable_version ?>.tar.gz.asc" title="Signed with key <?= smisk::$pgp_key ?>">PGP</a>)
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="h">
+					<h3>development</h3>
+				</td>
+				<td>
+					<p>
+						Clone the main repository from
+							<tt><a href="<?= h(smisk::$main_repo_url) ?>"><?= h(smisk::$main_repo_url) ?></a></tt><br/>
+						Download a snapshot of the repository: ↓
+							<a href="http://github.com/rsms/smisk/tarball/master">master.tar.gz</a><br/>
+						Smisk is also available from
+							<a href="http://pypi.python.org/pypi/smisk">Python PyPI</a>.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="h">
+					<h3>os x</h3>
+				</td>
+				<td>
+					<p>
+						Smisk is available in <a href="http://www.macports.org/">MacPorts</a>:
+						<tt class="pre"><a href="http://www.macports.org/ports.php?by=name&amp;substr=smisk">port search py*smisk</a></tt>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="h">
+					<h3>debian</h3>
+				</td>
+				<td>
+					<p>
+						Smisk is available as <a href="http://debian.org/">Debian Linux</a> packages from the Hunch repository,
+						signed with the key
+						<tt><a href="http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x<?= smisk::$pgp_key ?>"><?= smisk::$pgp_key ?></a></tt>.
+						Replace <tt><em>stable|testing|unstable</em></tt> with the Debian dist of choice.
+					</p>
+					<pre>deb <a href="http://hunch.se/debian/">http://hunch.se/debian/</a> <em>stable|testing|unstable</em> main
+deb-src <a href="http://hunch.se/debian/">http://hunch.se/debian/</a> <em>stable|testing|unstable</em> main</pre>
+					<p>
+						<em class="dimmed">The distributions "stable", "testing" and "unstable" 
+						refers to packages able to install on "stable" debian releases, "testing" debian 
+						releases and "unstable" debian releases, respectively. (i.e. not 
+						stable/testing/unstable versions of Smisk)</em>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
