@@ -2,7 +2,7 @@
 body { margin:2em; background:#fff; }
 body,h1,h2,h3,h4,p,td,li { font-family:'Helvetica',sans-serif; color:#000; }
 body,td,p,li { line-height:1.5em; font-size:14px; color:#333; }
-h1 { font-size:14px; margin-bottom:2em; color:#bbb; white-space:pre; }
+h1 { font-size:14px; margin-bottom:2em; color:#bbb; white-space:pre; line-height:22px; }
   h1 a { color:#ff7171; }
 h2 { font-weight:normal; font-size:1em; color:#bbb; }
 h3 { font-size:14px; }
