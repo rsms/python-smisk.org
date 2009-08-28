@@ -1,6 +1,6 @@
 <?
 # Site title and description
-gb::$site_title = 'Smisk';
+gb::$site_title = 'smisk';
 #gb::$site_description = 'Ramblings by My Name';
 
 # Shared secret used for hook triggering, etc.

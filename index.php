@@ -2,6 +2,30 @@
 $gb_handle_request = true;
 require 'gitblog/gitblog.php';
 
+class smisk {
+	static public $stable_version = '1.1.6';
+	static public $main_repo_url = 'git://github.com/rsms/smisk.git';
+	static public $pgp_key = '431B61D0';
+}
+
+# this overrides some or all values if smisk::
+GBPage::find('config')->body();
+
+# / defaults to about page
+if ($gb_request_uri === '') {
+	gb::$is_page = true;
+	gb::$is_posts = false;
+	$gb_request_uri = 'about';
+	$post = GBPage::find('about');
+}
+
+function selected($startswith) {
+	global $gb_request_uri;
+	if (strpos($gb_request_uri, $startswith) === 0)
+		return 'class="selected"';
+	return '';
+}
+
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -22,13 +46,13 @@ require 'gitblog/gitblog.php';
     </div>
     <div id="menu">
       <ul>
-        <li><a href="<?= gb::$site_url ?>" 
+        <li><a href="<?= gb::$site_url ?>" <?= selected('about') ?>
           title="An overview of Smisk, list of key features and mailing lists">about</a></li>
-        <li><a href="<?= gb::$site_url ?>examples"
+        <li><a href="<?= gb::url_to('/examples') ?>" <?= selected('examples') ?>
           title="Introduction to Smisk by example">examples</a></li>
-        <li><a href="<?= gb::$site_url ?>docs" 
+        <li><a href="<?= gb::url_to('/docs') ?>" <?= selected('docs') ?>
           title="Documentation of the Python API, the C API as well as general usage and guidelines">docs</a></li>
-        <li><a href="<?= gb::$site_url ?>downloads"
+        <li><a href="<?= gb::url_to('/downloads') ?>" <?= selected('downloads') ?>
           title="How and where to download Smisk">downloads</a></li>
         <li><a href="http://github.com/rsms/smisk/issues"
           title="List of all the horrible bugs... or wait a minute... no bugs?!">issues</a></li>
@@ -37,32 +61,26 @@ require 'gitblog/gitblog.php';
       </ul>
     </div>
 		<?
-		if ($gb_request_uri === '') {
-			require '_about.php';
-		}
-		else {
-			$path = '__'.str_replace(array('/','..'),'', $gb_request_uri).'.php';
-			if (is_file($path)) {
-				require $path;
-			}
-			# regular gitblog logic:
-			elseif (gb::$is_404) {
-				?>
-				<div id="error404">
-					<div class="wrapper">
-						<h1>404 Not Found</h1>
-						The page <b><?= h(gb::url()->toString(false)) ?></b> does not exist.
-					</div>
+		# regular gitblog logic:
+		if (gb::$is_404 || gb::$is_post || gb::$is_posts || gb::$is_tags || gb::$is_categories) {
+			?>
+			<div id="error404">
+				<div class="wrapper">
+					<h1>404 Not Found</h1>
+					The page <b><?= h(gb::url()->toString(false)) ?></b> does not exist.
 				</div>
-				<?
-			}
-			elseif (gb::$is_post || gb::$is_page) {
-				require gb::$theme_dir.'/post.php';
-			}
-			elseif (gb::$is_posts || gb::$is_tags || gb::$is_categories) {
-				require gb::$theme_dir.'/posts.php';
-			}
+			</div>
+			<?
 		}
+		elseif (gb::$is_page) {
+			require '_page.php';
+		}
+		/*elseif (gb::$is_post) {
+			require '_post.php';
+		}
+		elseif (gb::$is_posts || gb::$is_tags || gb::$is_categories) {
+			require gb::$theme_dir.'/posts.php';
+		}*/
 		
 		?>
 <? if ($_SERVER['SERVER_NAME'] === 'python-smisk.org'): ?>
