@@ -1,0 +1,13 @@
+{
+	"rebuild": [
+		"code-blocks.php",
+		"php-content.php"
+	],
+	"request": [
+		"php-content.php"
+	],
+	"admin": [
+		"akismet.php",
+		"email-notification.php"
+	]
+}

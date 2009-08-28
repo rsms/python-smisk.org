@@ -1,0 +1,38 @@
+*,h1,h2,h3,body,html,td,p,tr,table,div { margin:0; padding:0; }
+body { margin:0; margin-bottom:1em; background:white; }
+body,h1,h2,h3,h4,p,td,li { font-family:'Helvetica'; color:#000; }
+body,td,p,li { line-height:1.4em; font-size:1em; color:#333; }
+h1 { font-size:1em; color:#bbb; white-space:pre; margin:0; padding:.5em .8em; }
+  h1 a { color:#ff7171; }
+h3 { font-size:1em; }
+a { text-decoration:none; }
+table { border-collapse:collapse; }
+pre { background:#eee; margin:0.25em 0; padding:0.25em 0.5em; display:block; }
+
+.dimmed { color:#999; }
+
+#menu { display:block; clear:both; width:100%; float:none; }
+  #menu ul { list-style:none; border-bottom:3px solid #ccc; }
+  #menu li { font-weight:bold; font-size:1em; border-top:1px solid #ccc; }
+  #menu a { display:block; padding:.5em .8em; }
+  #menu a:link, #menu a:visited { color:#aaa; }
+  #menu a:link:hover, #menu a:visited:hover { color:#333; }
+  #menu a.selected { color:#000; }
+
+#main {  }
+#main table { width:100%; margin-top:1em; }
+  #main td, #main p, #main li { font-size:14px; }
+  #main td { vertical-align:top; padding-right:20px; }
+    #main td p, #main td > pre { margin-bottom:1.5em; }
+    #main td > ul, #main td > ol { margin-bottom:1em; }
+      #main td > ul li, #main td > ol li { padding-bottom:.5em; }
+  #main td.h { font-size:.7em; width:70px; text-align:right; padding-right:10px; padding-top:.3em; }
+  #main a:link, #main a:visited { border-bottom:1pt solid #ddd; color:#000; }
+  #main a:link:hover, #main a:visited:hover { color:#000; background:#f9f9f9; }
+  #main a:link:hover { border-bottom-color:blue; color:navy; }
+  #main a:visited:hover { border-bottom-color:purple; color:purple; }
+  #main pre { overflow:auto; max-width:210px; font-size:11px; line-height:1.2; white-space:normal; }
+  #main ul { margin-left:10px; }
+  #main ul.text, #main ul.no-bullets { list-style:none; margin-left:0; }
+  #main td > ul.text { margin-bottom:1.5em; }
+    #main ul.text li { padding-bottom:0; }
