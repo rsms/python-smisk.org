@@ -1,0 +1,92 @@
+title: examples
+auto-linebreaks: no
+
+<div id="main">
+  <table>
+    <tbody>
+      <tr>
+        <td class="h">
+          <h3>overview</h3>
+        </td>
+        <td>
+          <p>
+            Smisk is basically comprised of three modules:
+          </p>
+          <ul class="no-bullets">
+            <li>
+              <em><a href="#smisk.core">smisk.core</a></em> – I/O handling, FastCGI server,
+              HTTP transaction handling, manages sessions, file uploads, process forks, etc.
+              This module is implemented in native machine code and provides
+              a minimal set of functionality and a low level of abstraction.
+            </li>
+            <li>
+              <em><a href="#smisk.mvc">smisk.mvc</a></em> – (Transparent) Content Negotiation (TCN/CN), 
+              class tree-to-URL mapping, templating, ORM (Elixir/SQLAlchemy), etc.
+              The smisk.mvc module is the simples to use of the three modules presented here.
+              It provides a ready-to-go environment for rapid development and automatically makes
+              HTTP transactions, including any payloads, abstract to the implementation – you 
+              code does no need to know anything about the client peer and it's capabilities.
+            </li>
+            <li>
+              <em><a href="#smisk.wsgi">smisk.wsgi</a></em> – 
+              <a href="http://wsgi.org/" title="Read more about WSGI at wsgi.org...">Web Server Gateway Interface</a>
+              fully complying to
+              <a href="http://www.python.org/dev/peps/pep-0333/" title="Python Enhancement Proposal 333...">PEP 333</a>.
+              This module can be used to run existing applications, which uses WSGI, on Smisk.
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="h">
+          <h3 id="smisk.core">smisk.core</h3>
+        </td>
+        <td>
+          <ul class="no-bullets">
+            <li><a href="http://github.com/rsms/smisk/tree/v${stable_version}/examples/core/minimal">minimal</a>
+              – a minimal application based on smisk.core.</li>
+            <li><a href="http://github.com/rsms/smisk/tree/v${stable_version}/examples/core/input">input</a>
+              – testing all kind of user input like posting forms, uploading files, cookies, sessions...</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="h">
+          <h3 id="smisk.mvc">smisk.mvc</h3>
+        </td>
+        <td>
+          <ul class="no-bullets">
+            <li><a href="http://github.com/rsms/smisk/tree/v${stable_version}/examples/mvc/minimal">minimal</a>
+              – a minimal application based on smisk.mvc.</li>
+            <li><a href="http://github.com/rsms/smisk/tree/v${stable_version}/examples/mvc/key-value-store">key-value store</a>
+              – illustrates using the full power of HTTP request methods and the smisk.ipc module 
+              which provides concurrent data sets across multiple processes.</li>
+            <li><a href="http://github.com/rsms/smisk/tree/v${stable_version}/examples/mvc/kittens_orm">kittens-orm</a>
+              – a classic 
+              <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete"
+                title="Create, Read, Update and Delete...">CRUD</a>-example,
+              using a SQLite database to keep track of cute little kittens.</li>
+            <li><a href="http://github.com/rsms/smisk/tree/v${stable_version}/examples/mvc/xml-rpc">xml-rpc</a>
+              – XML-RPC example application. This illustrates how to tighten up TCN/CN to only accept and
+              serve a certain type of payloads. Also includes code for a simple Python client
+              (in the comments of app.py), interfacing with the service.</li>
+            <li><a href="http://github.com/rsms/smisk/tree/v${stable_version}/examples/mvc/xspf_service">xspf_service</a>
+              – An application handling 
+              <a href="http://www.xspf.org/" title="Learn more about XSPF a.k.a. Spiff...">XSPF</a> playlists.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td class="h">
+          <h3 id="smisk.wsgi">smisk.wsgi</h3>
+        </td>
+        <td>
+          <ul class="no-bullets">
+            <li><a href="http://github.com/rsms/smisk/tree/v${stable_version}/examples/wsgi/minimal">minimal</a>
+              – a minimal application based on smisk.wsgi.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
