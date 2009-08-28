@@ -43,7 +43,17 @@ function selected($startswith) {
 	</head>
 	<body>
 		<div id="head">
-			<h1><?= gb_title() ?></h1>
+			<h1><?
+			$u = gb::url_to('/');
+			$c = 0;
+			foreach (gb::$title as $s) {
+				if ($c++) {
+					echo '  →  ';
+					$u = rtrim($u, '/').'/'.$s;
+				}
+				echo '<a href="'.h($u).'">'.h($s).'</a>';
+			}
+			?></h1>
 		</div>
 		<div id="menu">
 			<ul>
