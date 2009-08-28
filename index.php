@@ -39,7 +39,7 @@ function selected($startswith) {
 		<link rel="alternate" title="Announcements" type="application/rss+xml" href="http://groups.google.com/group/smisk-announce/feed/rss_v2_0_msgs.xml" />
 		<link rel="alternate" title="Discussions" type="application/rss+xml" href="http://groups.google.com/group/smisk-discuss/feed/rss_v2_0_msgs.xml" />
 		<title><?= gb_title() ?></title>
-	<? gb_head() ?>
+		<? gb_head() ?>
 	</head>
 	<body>
 		<div id="head">
