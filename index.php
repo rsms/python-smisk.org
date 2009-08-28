@@ -61,8 +61,11 @@ function selected($startswith) {
       </ul>
     </div>
 		<?
-		# regular gitblog logic:
-		if (gb::$is_404 || gb::$is_post || gb::$is_posts || gb::$is_tags || gb::$is_categories) {
+		
+		if (gb::$is_page && !gb::$is_404) {
+			require '_page.php';
+		}
+		else {
 			?>
 			<div id="error404">
 				<div class="wrapper">
@@ -72,27 +75,7 @@ function selected($startswith) {
 			</div>
 			<?
 		}
-		elseif (gb::$is_page) {
-			require '_page.php';
-		}
-		/*elseif (gb::$is_post) {
-			require '_post.php';
-		}
-		elseif (gb::$is_posts || gb::$is_tags || gb::$is_categories) {
-			require gb::$theme_dir.'/posts.php';
-		}*/
 		
 		?>
-<? if ($_SERVER['SERVER_NAME'] === 'python-smisk.org'): ?>
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script><script type="text/javascript">
-      try {
-      var pageTracker = _gat._getTracker("UA-7185897-1");
-      pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-<? endif ?>
   </body>
 </html>
