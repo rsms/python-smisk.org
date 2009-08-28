@@ -13,3 +13,4 @@
 
 # python-smisk.org specific
 /secret
+/data/users.json
